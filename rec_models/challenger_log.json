@@ -1,0 +1,11 @@
+[
+  {
+    "decision": "PROMOTED",
+    "reason": "No existing champion \u2014 first model auto-promoted",
+    "challenger_name": "Hybrid",
+    "challenger_precision_at_10": 0.0081,
+    "challenger_ndcg_at_10": 0.0407,
+    "champion_name": null,
+    "evaluated_at": "2026-08-19 15:17:29"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "model_name": "rec_model_Hybrid_v1.joblib",
+  "artifacts_name": "rec_artifacts_v1.joblib",
+  "model_card_path": "rec_models\\model_card_Hybrid_v1.json"
+}

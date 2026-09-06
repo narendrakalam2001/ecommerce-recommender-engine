@@ -1,0 +1,30 @@
+{
+  "model_version": "v1",
+  "model_name": "Hybrid",
+  "trained_at": "2026-08-19 15:17:29",
+  "project": "E-Commerce / OTT Recommender Engine",
+  "dataset": {
+    "source": "MovieLens 1M (GroupLens)",
+    "train_size": 988129,
+    "val_size": 6040,
+    "test_size": 6040,
+    "n_users": 6040,
+    "n_items": 3706
+  },
+  "metrics": {
+    "precision_at_10": 0.0081,
+    "recall_at_10": 0.0806,
+    "ndcg_at_10": 0.0407,
+    "map_at_10": 0.0287,
+    "precision_at_5": 0.01,
+    "ndcg_at_5": 0.031,
+    "precision_at_20": 0.0061,
+    "ndcg_at_20": 0.0514,
+    "catalog_coverage": 0.4379,
+    "novelty": 9.801
+  },
+  "hyperparameters": {
+    "alpha": 0.85,
+    "svd_n_components": 20
+  }
+}

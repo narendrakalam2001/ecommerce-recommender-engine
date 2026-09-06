@@ -1,0 +1,86 @@
+# ============================================================
+# .GITIGNORE — E-Commerce / OTT Recommender ML System
+# ============================================================
+# Deployment-aware: Render (FastAPI) and Streamlit Cloud both
+# pull code straight from GitHub and run training-free — they
+# need the TRAINED MODEL ARTIFACTS and the SAMPLE DATASET to
+# already be in the repo. Only the full raw MovieLens dataset,
+# caches, and local-only junk are excluded.
+# ============================================================
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# ── Virtual environments ──────────────────────────────────────
+venv/
+env/
+.env
+.venv/
+
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Model artifacts — PUSHED, not ignored ───────────────────────
+# rec_models/ is required by Render (FastAPI loads the champion
+# model at startup) and by Streamlit (dashboard reads model card +
+# registry + challenger log). Do NOT ignore this folder.
+# If any single artifact exceeds GitHub's 100MB hard limit, use
+# Git LFS for that file instead of excluding the folder.
+!rec_models/
+!rec_models/**
+
+# ── Data — small samples PUSHED, full raw dataset ignored ──────
+# data/sample_*.dat and data/sample_*.csv are small and required
+# so Render/Streamlit (and anyone cloning the repo) have something
+# to demo without waiting on the full download. Everything else
+# under data/ (the full auto-downloaded MovieLens dataset, and any
+# local download cache) is excluded — it's large and regenerates
+# automatically on first `train_model.py` run.
+!data/sample_*.dat
+!data/sample_*.csv
+!data/.gitkeep
+data/ml-1m/
+data/ml-1m.zip
+
+# Local dataset download/extraction cache — NOT part of our own
+# code, but shows up on some setups when the dataset auto-downloads.
+# Contains the full raw dataset (24MB+ zip + extracted .dat files) —
+# never push this.
+.dataset_cache/
+
+# ── Logs ──────────────────────────────────────────────────────
+!logs/*.csv
+!logs/.gitkeep
+*.log
+
+# ── NoteBook ────────────────────────────────────────────────────
+notebooks/data
+!notebooks/ecommerce_recommender_eda.ipynb
+!notebooks/ecommerce_recommender_eda.html
+
+# ── MLflow ────────────────────────────────────────────────────
+mlflow.db
+mlruns/
+mlartifacts/
+
+# ── Pytest / coverage ─────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
