@@ -1,6 +1,6 @@
 # 🎬 E-Commerce / OTT Recommender Engine — Hybrid Recommendation System
 
-[![CI](https://github.com/narendrakalam2001/ecommerce-recommender-engine-mlops/actions/workflows/ci.yml/badge.svg)](https://github.com/narendrakalam2001/ecommerce-recommender-engine-mlops/actions)
+[![CI](https://github.com/narendrakalam2001/ecommerce-recommender-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/narendrakalam2001/ecommerce-recommender-engine/actions)
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://python.org)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-f89939.svg)](https://scikit-learn.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com)
@@ -57,9 +57,9 @@ This mirrors how Netflix India / Amazon / Myntra / Meesho actually engineer reco
 
 | Service | URL |
 |---|---|
-| 🚀 **FastAPI (Swagger UI)** | [https://ecommerce-recommender-engine-mlops.onrender.com/docs](https://ecommerce-recommender-engine-mlops.onrender.com/docs) |
-| 📊 **Monitoring Dashboard** | [https://ecommerce-recommender-engine-mlops.streamlit.app](https://ecommerce-recommender-engine-mlops.streamlit.app) |
-| 📓 **EDA Notebook** | [notebooks/instacart_market_basket_eda.ipynb](notebooks/instacart_market_basket_eda.ipynb) |
+| 🚀 **FastAPI (Swagger UI)** | [https://ecommerce-recommender-engine.onrender.com/docs](https://ecommerce-recommender-engine.onrender.com/docs) |
+| 📊 **Monitoring Dashboard** | [https://ecommerce-recommender-engine-dashboard.streamlit.app](https://ecommerce-recommender-engine-dashboard.streamlit.app) |
+| 📓 **EDA Notebook** | [notebooks/ecommerce_recommender_eda.ipynb](notebooks/ecommerce_recommender_eda.ipynb) |
 
 > ⚠️ Render free tier: first request may take 30–60 seconds (cold start).
 
@@ -225,8 +225,8 @@ Ecommerce-Recommender-Engine-ML-System/
 │   └── run_simulation.py                  # python scripts/run_simulation.py
 │
 ├── notebooks/
-│   ├── instacart_market_basket_eda.ipynb     # Professional EDA — 20 steps, fully executed on real data
-│   └──instacart_market_basket_eda.html              
+│   ├── ecommerce_recommender_eda.ipynb     # Professional EDA — 25 steps, fully executed on real data
+│   └── ecommerce_recommender_eda.html              
 │
 ├── data/
 │   ├── sample_aisles.csv                       # Small sample of MovieLens for quick smoke-testing
