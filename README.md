@@ -545,17 +545,19 @@ Result: 53 passed · 0 failed
 
 ## 📊 Business Impact
 
-Based on the actual model results, framed for Netflix India / Amazon / Myntra / Meesho:
+Based on actual model results (full-catalog leave-one-out evaluation):
 
 | Signal this system tracks | Business consequence if ignored |
 |---|---|
-| Catalog coverage collapse (SVD alone: 14.5%) | Long-tail titles/products never surface → lost discovery revenue |
+| Catalog coverage collapse (SVD alone: 14.5%) | Long-tail titles/products never surface → lost discovery |
 | Cold-start users (new sign-ups) | Blank/irrelevant homepage → higher day-1 churn |
 | Novelty vs. pure popularity | "Recommended for you" indistinguishable from "trending" → no personalization lift |
 | PSI drift on live recommendation scores | Silent model degradation post-deployment goes undetected |
-| Weak-candidate inclusion (User-CF) | Proves engineering judgment with data, not just a claim — the same rigor a hiring team wants to see applied to their own model choices |
+| Weak-candidate inclusion (User-CF) | Demonstrates with data why item-based / model-based CF is preferred over naive user-based CF |
 
-> Recommendation engines are cited as driving **30–40% of total revenue** at OTT/e-commerce scale (Netflix India, Amazon, Myntra, Meesho) through personalized suggestions — the same architecture built here (leave-one-out evaluation, Champion-Challenger governance, cold-start handling, diversity re-ranking) is the production pattern behind that number, not just a Kaggle leaderboard exercise.
+**Measured results (test set):** Hybrid champion NDCG@10 = 0.0407, Recall@10 = 0.0806, catalog coverage = 0.4379 (vs 0.1452 for SVD alone).
+
+> The same pattern — leave-one-out evaluation, Champion-Challenger governance, cold-start handling and diversity re-ranking — is how recommenders are typically engineered for production. No revenue-impact claim is made here: this is an offline evaluation on a static dataset, not an A/B test.
 
 ---
 
@@ -574,11 +576,11 @@ Based on the actual model results, framed for Netflix India / Amazon / Myntra / 
 
 **Narendra Kalam** — MSc Computer Science (Gold Medalist — NASSCOM, Full Stack Data Science + AI)
 
-> Building 20+ industry-level, end-to-end ML systems across all domains.
+> Building 30+ industry-level, end-to-end ML systems across all domains.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/narendra-kalam/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/narendra-kalam)
 [![Kaggle](https://img.shields.io/badge/Kaggle-Profile-20BEFF?logo=kaggle)](https://www.kaggle.com/narendrakalam)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green?logo=github)](https://narendrakalam2001.github.io/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green?logo=github)](https://narendrakalam2001.github.io)
 [![Email](https://img.shields.io/badge/Email-Contact-red?logo=gmail)](mailto:kalamnarendra2001@gmail.com)
 
 ### Portfolio Projects
@@ -603,6 +605,19 @@ Based on the actual model results, framed for Netflix India / Amazon / Myntra / 
 | 16 | Customer Segmentation Engine | E-Commerce / BFSI | DBSCAN (Unsupervised) | Silhouette = 0.4056 |
 | 17 | Market Basket Analysis (Instacart) | Retail / Quick-Commerce | Apriori | 68,820 rules · mean lift = 15.66 |
 | 18 | **E-Commerce / OTT Recommender** | **E-Commerce / Streaming** | **Hybrid (SVD + Content)** | **NDCG@10 = 0.0407 · 4 candidates** |
+| 19 | Hospital Readmission Prediction | Healthcare / Hospital Ops | ExtraTrees | F1 = 0.2702 · ROC-AUC = 0.6513 |
+| 20 | HR Policy Intelligence Chatbot | HR Tech / Enterprise GenAI | Gemini 3.6 Flash + RAG | 30/30 tests · guardrail threshold=0.35 |
+| 21 | Employee Attrition Prediction | HR Tech / People Analytics | NeuralNet (MLP) | F1 = 0.3902 · ROC-AUC = 0.6698 |
+| 22 | ANN From Scratch — MNIST Digit Recognizer | Deep Learning Fundamentals | From-scratch ANN | Test Acc = 0.9740 · Macro F1 = 0.9739 |
+| 23 | Insurance Premium Prediction | Insurance / Actuarial ML | RandomForest | RMSLE = 1.1586 · 1.2M real policies |
+| 24 | Health Insurance Cross-Sell | Insurance / BFSI | ExtraTrees | ROC-AUC = 0.8404 · 67.8% calls saved |
+| 25 | Ride Fare Price Prediction | Mobility / Ride-Hailing | LightGBM | RMSE = $3.81 · R² = 0.8419 · 55M rows |
+| 26 | E-Commerce BI & SQL Analytics | Retail Analytics / BI | SQL + FastAPI + Streamlit | 40 tests passing · 100K orders |
+| 27 | AgriSense AI | AgriTech | EfficientNetB3 | Accuracy = 98.44% · Macro-F1 = 0.9843 · 38 classes |
+| 28 | AI Loan Underwriting Platform | BFSI / Fintech | XGBoost (credit + fraud) | Credit ROC-AUC = 0.858 · Fraud ROC-AUC = 0.955 · 242 tests |
+| 29 | CineMatch Pro | Entertainment / Media Tech | Hybrid SVD + TF-IDF + SBERT · CLIP · RoBERTa | RMSE = 0.8005 · Sentiment Acc = 94.26% · 56K posters |
+| 30 | DriveGuard AI | Computer Vision / Smart Cities | YOLOv8m + DeepSORT + Gemini RAG | mAP@0.5 = 0.680 · 31 API routes · 364 tests |
+| 31 | MathVision AI | EdTech / Computer Vision | TrOCR-large + SymPy | CER = 0.138 · 350/350 symbolic solved |
 
 
 ---
